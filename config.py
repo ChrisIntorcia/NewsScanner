@@ -1,5 +1,6 @@
 # config.py
 """Configuration settings for the LD Micro News Analysis System."""
+import os
 
 # Email Configuration
 EMAIL_CONFIG = {
@@ -23,10 +24,16 @@ FINANCIAL_API_CONFIG = {
     'base_url': 'https://www.alphavantage.co/query'
 }
 
+# Gemini API Configuration
+GEMINI_CONFIG = {
+    'api_key': os.getenv('GEMINI_API_KEY', ''),  # Set GEMINI_API_KEY environment variable
+    'model': 'gemini-2.5-flash'  # Using Gemini 2.5 Flash (fast and efficient)
+}
+
 # Scraping Configuration
 SCRAPING_CONFIG = {
-    'start_date': '2025-07-28',  # Today only
-    'end_date': '2025-07-28',    # Today only
+    'start_date': '2025-12-01',  # Today (update as needed)
+    'end_date': '2025-12-01',    # Today (update as needed)
     'delay_between_requests': 2,
     'timeout': 30000,
     'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
